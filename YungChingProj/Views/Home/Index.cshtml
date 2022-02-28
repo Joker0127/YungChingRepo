@@ -2,30 +2,152 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<style>
+    .mycontent{
+        margin-top:3%;
+
+    }
+    .listdiv {
+        margin-top: 3%;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+</style>
+
+<div class="col-lg-12" style="min-height:90vh;margin-top:5%;">
+    <div class="col-lg-12" style="display:flex;justify-content:center;">
+
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#customers" data-toggle="tab">客戶(Customers)</a></li>
+            <li><a href="#employees" data-toggle="tab">員工(Employees)</a></li>
+            <li><a href="#orders" data-toggle="tab">訂單(Orders)</a></li>
+            <li><a href="#products" data-toggle="tab">產品(Products)</a></li>
+        </ul>
+    </div>
+
+    <div class="col-lg-12" style="display:flex;justify-content:center;">
+
+        <div id="myTabContent" class="tab-content" style="border: 1px solid;padding-bottom: 3%;">
+            <div class="tab-pane fade in active mycontent" id="customers">
+
+                <div class="col-lg-12">
+                    <div class="col-lg-3">
+
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxGet('customers',false);">取得全部客戶資料</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="number" id="customersid_get" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxGet('customers',true);">取得指定客戶資料</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="number" id="customersid_post" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxPost('customers');">修改指定客戶資料</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="number" id="customersid_delete" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxDelete('customers');">刪除指定客戶資料</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade mycontent" id="employees">
+                <p>員工員工員工員工員工</p>
+
+
+            </div>
+
+            <div class="tab-pane fade mycontent" id="orders">
+                <p>訂單訂單訂單訂單訂單</p>
+
+
+            </div>
+
+            <div class="tab-pane fade mycontent" id="products">
+                <p>產品產品產品產品產品</p>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-12" style="min-height:40vh;margin-top:5%;border:1px solid;">
+        <div class="col-lg-12" id="resultapi" style="height:100%;width:100%;min-height:400px;">
+
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+
+
+
+<script>
+
+    function apiTest() {
+        $.ajax({
+            url: "../api/Customers",
+            type: "Get",
+            success: function (result) {
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr + "/" + ajaxOptions + "/" + thrownError);
+            },
+        })
+    }
+
+    function myAjaxGet(item, hasID) {
+        var urlstr = "";
+        var tmpid = document.getElementById('customersid_get').value;
+        if (hasID) {
+            urlstr = "../api/" + item + "/" + tmpid;
+        }
+        else {
+            urlstr = "../api/" + item;
+        }
+
+        $.ajax({
+            url: urlstr,
+            type: "Get",
+            success: function (result) {
+                document.getElementById('resultapi').innerText = result;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr + "/" + ajaxOptions + "/" + thrownError);
+            },
+        })
+    }
+
+
+</script>

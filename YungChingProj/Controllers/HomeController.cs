@@ -10,6 +10,10 @@ namespace YungChingProj.Controllers
     {
         public ActionResult Index()
         {
+            SiteSupport.DBManager.DBManager manager = new SiteSupport.DBManager.DBManager();
+            System.Data.DataTable dt = manager.DB_GetDatatable("select * from Customers");
+
+
             return View();
         }
     }

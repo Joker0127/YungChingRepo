@@ -6,12 +6,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SiteSupport
+namespace SiteSupport.DBManager
 {
-    public class Class1
+    public class DBManager
     {
-        private readonly string ConnectStr = "Data Source=(LocalDB)\\MSSQLLOCALDB;Initial Catalog = Northwind; Persist Security Info=True;User ID = sa;Password=sa; MultipleActiveResultSets=True;Application Name = EntityFramework";
+        //private readonly string ConnectStr = "Data Source=(LocalDB)\\MSSQLLOCALDB;Initial Catalog = Northwind; Persist Security Info=True;User ID = sa;Password=sa; MultipleActiveResultSets=True;Application Name = EntityFramework";
 
+        private static string ConnectStr = string.Empty;
+        //public DBManager(string ip, string database, string user, string psw)
+        //{
+        //    //(LocalDB)\\MSSQLLOCALDB
+        //    //Northwind
+        //    //sa
+        //    //sa
+        //    ConnectStr = $"Data Source = {ip};Initial Catalog = {database}; Persist Security Info=True;User ID = {user};Password = {psw}; MultipleActiveResultSets=True;Application Name = EntityFramework";
+        //}
+
+        public static void DB_setConnectStr(string ip, string database, string user, string psw)
+        {
+            ConnectStr = $"Data Source = {ip};Initial Catalog = {database}; Persist Security Info=True;User ID = {user};Password = {psw}; MultipleActiveResultSets=True;Application Name = EntityFramework";
+        }
 
         public DataTable DB_GetDatatable(string str)
         {
