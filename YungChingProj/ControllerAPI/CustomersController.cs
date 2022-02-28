@@ -19,5 +19,29 @@ namespace YungChingProj.ControllerAPI
             List<SiteSupport.Model.Customers> list = supportDB.Customers_Get();
             return JsonConvert.SerializeObject(list);
         }
+
+        //GET api/Customers
+        [HttpGet]
+        public string Get(string id)
+        {
+            List<SiteSupport.Model.Customers> list = supportDB.Customers_Get(id);
+            return JsonConvert.SerializeObject(list);
+        }
+
+        //Post api/Customers
+        [HttpPost]
+        public string Post(SiteSupport.Model.Customers customers)
+        {
+            bool ok = supportDB.Customers_Update(customers);
+            return JsonConvert.SerializeObject(ok);
+        }
+
+        //Delete api/Customers
+        [HttpDelete]
+        public string Delete(string id)
+        {
+            bool ok = supportDB.Customers_Delete(id);
+            return JsonConvert.SerializeObject(ok);
+        }
     }
 }

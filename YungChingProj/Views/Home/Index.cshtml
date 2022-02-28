@@ -10,11 +10,6 @@
     .listdiv {
         margin-top: 3%;
     }
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
 
 </style>
 
@@ -47,11 +42,14 @@
                     <div class="col-lg-3" style="display:flex;align-items:center;">
                         <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
                         <div class="col-lg-8" style="padding:0;margin-left:10%;">
-                            <input type="number" id="customersid_get" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;">
+                            <input type="text" id="customersid_get" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <button class="btn btn-primary" onclick="myAjaxGet('customers',true);">取得指定客戶資料</button>
+                    </div>
+                    <div class="col-lg-3">
+                        Joker,BERGS,BLAUS,BONAP,CENTC
                     </div>
                 </div>
 
@@ -59,7 +57,7 @@
                     <div class="col-lg-3" style="display:flex;align-items:center;">
                         <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
                         <div class="col-lg-8" style="padding:0;margin-left:10%;">
-                            <input type="number" id="customersid_post" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;">
+                            <input type="text" id="customersid_post" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -71,7 +69,7 @@
                     <div class="col-lg-3" style="display:flex;align-items:center;">
                         <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
                         <div class="col-lg-8" style="padding:0;margin-left:10%;">
-                            <input type="number" id="customersid_delete" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;">
+                            <input type="text" id="customersid_delete" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -80,22 +78,158 @@
                 </div>
             </div>
 
+
+
             <div class="tab-pane fade mycontent" id="employees">
-                <p>員工員工員工員工員工</p>
+                <div class="col-lg-12">
+                    <div class="col-lg-3">
 
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxGet('customers',false);" disabled>取得全部員工資料</button>
+                    </div>
+                </div>
 
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="text" id="customersid_get" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxGet('customers',true);" disabled>取得指定員工資料</button>
+                    </div>
+                    <div class="col-lg-3">
+                        Joker,BERGS,BLAUS,BONAP,CENTC
+                    </div>
+                </div>
+
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="text" id="customersid_post" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxPost('customers');" disabled>修改指定員工資料</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="text" id="customersid_delete" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxDelete('customers');" disabled>刪除指定員工資料</button>
+                    </div>
+                </div>
             </div>
+
 
             <div class="tab-pane fade mycontent" id="orders">
-                <p>訂單訂單訂單訂單訂單</p>
+                <div class="col-lg-12">
+                    <div class="col-lg-3">
 
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxGet('customers',false);" disabled>取得全部訂單資料</button>
+                    </div>
+                </div>
 
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="text" id="customersid_get" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxGet('customers',true);" disabled>取得指定訂單資料</button>
+                    </div>
+                    <div class="col-lg-3">
+                        Joker,BERGS,BLAUS,BONAP,CENTC
+                    </div>
+                </div>
+
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="text" id="customersid_post" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxPost('customers');" disabled>修改指定訂單資料</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="text" id="customersid_delete" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxDelete('customers');" disabled>刪除指定訂單資料</button>
+                    </div>
+                </div>
             </div>
 
+
             <div class="tab-pane fade mycontent" id="products">
-                <p>產品產品產品產品產品</p>
+                <div class="col-lg-12">
+                    <div class="col-lg-3">
 
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxGet('customers',false);" disabled>取得全部產品資料</button>
+                    </div>
+                </div>
 
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="text" id="customersid_get" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxGet('customers',true);" disabled>取得指定產品資料</button>
+                    </div>
+                    <div class="col-lg-3">
+                        Joker,BERGS,BLAUS,BONAP,CENTC
+                    </div>
+                </div>
+
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="text" id="customersid_post" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxPost('customers');" disabled>修改指定產品資料</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 listdiv">
+                    <div class="col-lg-3" style="display:flex;align-items:center;">
+                        <label class="col-lg-1 control-label " style="margin-bottom:0px;">ID：</label>
+                        <div class="col-lg-8" style="padding:0;margin-left:10%;">
+                            <input type="text" id="customersid_delete" class="form-control " style="text-align:left;margin-right:0px;cursor: pointer;" value="Joker">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary" onclick="myAjaxDelete('customers');" disabled>刪除指定產品資料</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -150,4 +284,38 @@
     }
 
 
+    function myAjaxPost(item) {
+        var tmpid = document.getElementById('customersid_post').value;
+
+        var data = { CustomerID: tmpid, Fax: "123123" }
+        var urlstr = "../api/" + item;
+        $.ajax({
+            url: urlstr,
+            type: "Post",
+            data: data,
+            success: function (result) {
+                document.getElementById('resultapi').innerText = result;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr + "/" + ajaxOptions + "/" + thrownError);
+            },
+        })
+    }
+
+    function myAjaxDelete(item) {
+        var urlstr = "";
+        var tmpid = document.getElementById('customersid_delete').value;
+        urlstr = "../api/" + item + "/" + tmpid;
+
+        $.ajax({
+            url: urlstr,
+            type: "Delete",
+            success: function (result) {
+                document.getElementById('resultapi').innerText = result;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr + "/" + ajaxOptions + "/" + thrownError);
+            },
+        })
+    }
 </script>
