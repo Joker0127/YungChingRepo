@@ -3,3 +3,4 @@ C:\Users\csabc\Desktop\YungChingProj\SiteSupport\bin\Debug\SiteSupport.dll
 C:\Users\csabc\Desktop\YungChingProj\SiteSupport\bin\Debug\SiteSupport.pdb
 C:\Users\csabc\Desktop\YungChingProj\SiteSupport\obj\Debug\SiteSupport.dll
 C:\Users\csabc\Desktop\YungChingProj\SiteSupport\obj\Debug\SiteSupport.pdb
+C:\Users\csabc\Desktop\YungChingProj\SiteSupport\obj\Debug\SiteSupport.csprojAssemblyReference.cache
